@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maxsopharmaceutical.vercel.app/sitemap.xml
