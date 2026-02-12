@@ -209,9 +209,14 @@ By joining Maxso Pharma, you become part of a passionate, responsible, and forwa
 
   </div>
 
-  <div class="border-t border-gray-700 mt-10 pt-4 text-center text-sm text-gray-400">
-    © 2025 Maxso Pharmaceutical. All Rights Reserved.
   </div>
+<p class="text-center text-sm mt-6">
+  © <span id="year"></span> Maxso Pharmaceutical. All Rights Reserved.
+</p>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </footer>
 
 </body>
