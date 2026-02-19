@@ -70,7 +70,7 @@
     <button class="category-btn px-4 py-2 rounded bg-blue-600 text-gray" data-category="all">All</button>
     <button class="category-btn px-4 py-2 rounded bg-gray-200" data-category="vitamins">Vitamins</button>
     <button class="category-btn px-4 py-2 rounded bg-gray-200" data-category="Psychiatry">Psychiatry</button>
-    <button class="category-btn px-4 py-2 rounded bg-gray-200" data-category="gastric">Gastric</button>
+    <button class="category-btn px-4 py-2 rounded bg-gray-200" data-category="gastric">Gastro</button>
     <button class="category-btn px-4 py-2 rounded bg-gray-200" data-category="sleep">Sleep</button>
     <button class="category-btn px-4 py-2 rounded bg-gray-200" data-category="neurology">Neurology</button>
     <button class="category-btn px-4 py-2 rounded bg-gray-200" data-category="neuropathy">Neuropathy</button>
@@ -79,6 +79,16 @@
   </div>
 
   <!-- PRODUCTS GRID -->
+    <!-- SEARCH BAR -->
+<div class="text-center mb-8">
+  <input 
+    type="text" 
+    id="searchInput"
+    placeholder="Search products..."
+    class="w-1/2 px-4 py-2 border rounded-lg shadow"
+    onkeyup="searchProduct()"
+  >
+</div>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
     <!-- Maxsovit -->
@@ -355,7 +365,22 @@ buttons.forEach(button => {
   });
 });
 </script>
+<script>
+function searchProduct() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let products = document.querySelectorAll(".product-card");
 
+  products.forEach(product => {
+    let title = product.querySelector("h2").innerText.toLowerCase();
+
+    if (title.includes(input)) {
+      product.style.display = "flex";
+    } else {
+      product.style.display = "none";
+    }
+  });
+}
+</script>
 </body>
 </html>
 
